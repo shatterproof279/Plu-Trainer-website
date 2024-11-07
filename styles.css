@@ -1,0 +1,313 @@
+/* styles.css */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Navigation */
+  nav {
+    background-color: #4CAF50;
+    padding: 10px 0;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+  
+  nav li {
+    margin: 0 15px;
+  }
+  
+  nav li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 5px;
+  }
+  
+  nav li a:hover {
+    background-color: #45a049;
+  }
+  
+  /* Main Content */
+  main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  /* Heading */
+  main h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Start Screen */
+  #start-screen {
+    text-align: center;
+  }
+  
+  #start-screen h2 {
+    margin-bottom: 20px;
+  }
+  
+  .mode-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .mode-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Timer Toggle Switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 10px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  #timer-status {
+    font-size: 18px;
+    vertical-align: middle;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #4CAF50;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #4CAF50;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  /* Quiz Interface */
+  #quiz-interface {
+    text-align: center;
+  }
+  
+  #progress-display,
+  #score-display,
+  #combo-display,
+  #timer-display {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  #quiz-container {
+    margin-top: 20px;
+  }
+  
+  .option {
+    display: block;
+    background-color: white;
+    padding: 10px 20px;
+    margin: 10px auto;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+  
+  .option:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .feedback {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  #control-buttons {
+    margin-top: 20px;
+  }
+  
+  #control-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  #control-buttons button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Pause Button */
+  #pause-button.paused {
+    background-color: #FF5722;
+  }
+  
+  #pause-button.paused:hover {
+    background-color: #E64A19;
+  }
+  
+  /* Restart Button */
+  .restart-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+  }
+  
+  .restart-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Pause Overlay */
+  #pause-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
+  
+  #pause-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  #pause-message h2 {
+    margin-bottom: 20px;
+  }
+  
+  #pause-message p {
+    font-size: 18px;
+  }
+  
+  /* Pause Overlay Resume Button */
+  #resume-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  #resume-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Feedback Overlay */
+  #feedback-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
+  
+  #feedback-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  #feedback-message h2 {
+    margin-bottom: 20px;
+  }
+  
+  #feedback-message p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  /* Continue Button */
+  #continue-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  #continue-button:hover {
+    background-color: #45a049;
+  }
+  

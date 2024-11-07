@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLU Code Trainer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="quiz.html">Home</a></li>
+    </ul>
+  </nav>
+  <main id="quiz-section">
+    <h1>PLU Code Quiz</h1>
+
+    <!-- Start Screen -->
+    <div id="start-screen">
+      <h2>Select Quiz Mode</h2>
+      <button class="mode-button" data-mode="produce">Produce Only</button>
+      <button class="mode-button" data-mode="everything">Everything</button>
+      <button class="mode-button" data-mode="non-produce">Everything Except Produce</button>
+
+      <h2>Enable Timer?</h2>
+      <label class="switch">
+        <input type="checkbox" id="timer-toggle" checked>
+        <span class="slider round"></span>
+      </label>
+      <span id="timer-status">Timer On</span>
+    </div>
+
+    <!-- Quiz Interface -->
+    <div id="quiz-interface" style="display: none;">
+      <p id="progress-display">Question 1 of X</p>
+      <p id="score-display">Score: 0</p>
+      <p id="combo-display">Combo: 0</p>
+      <p id="timer-display">Time Left: 15s</p>
+      <div id="quiz-container"></div>
+      <div id="control-buttons">
+        <button id="pause-button">Pause</button>
+        <button id="reset-button">Reset Quiz</button>
+        <button id="exit-button">Exit Quiz</button>
+      </div>
+    </div>
+
+    <!-- Pause Overlay -->
+    <div id="pause-overlay" style="display: none;">
+      <div id="pause-message">
+        <h2>Quiz Paused</h2>
+        <p>Press "Resume" to continue.</p>
+        <button id="resume-button">Resume</button>
+      </div>
+    </div>
+
+    <!-- Feedback Overlay -->
+    <div id="feedback-overlay" style="display: none;">
+      <div id="feedback-message">
+        <h2 id="feedback-header">Feedback</h2>
+        <p id="feedback-text"></p>
+        <button id="continue-button">Continue</button>
+      </div>
+    </div>
+  </main>
+  <script src="quiz.js"></script>
+</body>
+</html>
